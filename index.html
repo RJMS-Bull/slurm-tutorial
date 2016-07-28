@@ -1,93 +1,35 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Slurm-tutorial by RJMS-Bull</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Slurm-tutorial</h1>
-        <p></p>
+    <section class="page-header">
+      <h1 class="project-name">Slurm-tutorial</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/RJMS-Bull/slurm-tutorial" class="btn">View on GitHub</a>
+      <a href="https://github.com/RJMS-Bull/slurm-tutorial/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/RJMS-Bull/slurm-tutorial/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/RJMS-Bull/slurm-tutorial">View the Project on GitHub <small>RJMS-Bull/slurm-tutorial</small></a></p>
+    <section class="main-content">
+      <h1>
+<a id="slurm-tutorial" class="anchor" href="#slurm-tutorial" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>slurm-tutorial</h1>
 
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/RJMS-Bull/slurm-tutorial">Slurm-tutorial</a> is maintained by <a href="https://github.com/RJMS-Bull">RJMS-Bull</a>.</span>
 
-        <ul>
-          <li><a href="https://github.com/RJMS-Bull/slurm-tutorial/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/RJMS-Bull/slurm-tutorial/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/RJMS-Bull/slurm-tutorial">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h3>
-
-<p>High Performance Computing is characterized by the continuous evolution of computing architectures, the proliferation of computing resources and the increasing complexity of applications, users wish to execute. One of the most important software of  the HPC software stack that deals with both hardware resources evolutions and applications' needs is the Resource and Job Management System (RJMS). This systems software which stands between the user workloads and the infrastructure, provides functions to configure and manage the pool of resources along with features for building, submitting, scheduling and monitoring user jobs in a dynamic computing environment.</p>
-
-<p>This tutorial is upon Slurm Resource and Job Management System. Slurm is an open source RJMS, specifically designed for the scalability requirements of state-of-the-art HPC clusters. As of the November 2015 Top500 supercomputer list, Slurm is being used on five of the ten most powerful computers in the world including the no1 system, Tianhe-2 with 3,120,000 computing cores. Throughout the years, it has evolved from a simple resource management software to a complex but very powerful resource and job manager, workload scheduler and an interesting research tool.</p>
-
-<p>The tutorial will give an overview of the concepts and underlying architecture of Slurm and it will focus on both administrator configuration and user executions related aspects. It will be decomposed into three parts: Administration, Usage and Performance Evaluation.</p>
-
-<p>On the administration part there will be a detailed description and hands-on for features such as job prioritization, resources selection, GPGPUs and generic resources, advanced reservations, accounting (associations, QOS, etc), scheduling(backfill, preemption), high availability, power management, topology aware placement, licenses management, burst buffers, scalability tuning with a particular focus on the configuration of the newly developed power adaptive scheduling technique.</p>
-
-<p>The usage training part will provide in-depth analysis and hands-on for CPU usage parameters, options for multi-core and multi-threaded architectures, prolog and epilog scripts, job arrays, MPI tight integration, CPU frequency scaling usage, accounting / reporting and profiling of user jobs and a particular focus on the newly developed heterogeneous resources job specification language and multiple program multiple data (MPMD) MPI support.</p>
-
-<p>Finally the performance evaluation part will consist of techniques with hands-on to experiment with Slurm in large scales using simulation and emulation which will be valuable for researchers and developers.</p>
-
-<p>For the hands-on exercises particular VM and container environments will be made available along with a pre-installed testbed cluster to enable the experimentation of the different functionalities.</p>
-
-<h3>
-<a id="discussion-of-the-topics-relevance" class="anchor" href="#discussion-of-the-topics-relevance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Discussion of the topic’s relevance</h3>
-
-<p>The topics of “Resource and Job Management” , “Energy-Efficient Management” along with “Fault tolerance and high-availability” which are all principal subjects of Cluster 2016 conference are directly related to the particular tutorial. The tutorial will be attractive to Cluster 2016 attendees working as cluster administrators, systems software developers or simple cluster users since Slurm is one of the most used RJMS within Top500 and it is probably the most known and deployed open-source RJMS for small and medium size clusters too. Finally, since Slurm is widely spread as a research tool on resource management and scheduling in HPC and the tutorial deals also with performance evaluation techniques regarding Slurm, it will be an interesting subject for researchers working on these areas. </p>
-
-<h3>
-<a id="goals-demonstrations-and-exercises" class="anchor" href="#goals-demonstrations-and-exercises" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Goals, demonstrations and exercises</h3>
-
-<p>The goals of the tutorial is to provide a detailed view of Slurm resource and job management system for administrators, users, developers and researchers.</p>
-
-<p>-The hands-on user level exercises will take place upon a pre-installed cluster where each participant will obtain a guest account and will be able to explore the different possibilities of SLURM through detailed step-by-step exercises.</p>
-
-<p>-The hands-on administrator level exercises will take place upon virtualized or containerized environments. Specifically constructed VM and Docker environments will become available to each interested participant and they will have the possibility to configure virtual clusters and experiment with the different available functionalities and configuration shortcuts.</p>
-
-<p>-The performance evaluation exercises will make use of open-source tools and techniques that have been developed by the instructors to experiment with Slurm in large scales. VM and Docker environments will be used to facilitate the usage of these tools.</p>
-
-<h3>
-<a id="target-audience" class="anchor" href="#target-audience" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Target audience</h3>
-
-<p>The tutorial is destined for scientists from different domains of computer science that use HPC clusters in their every day research. It is destined for site administrators that wish to adopt Slurm as their RJMS or that need to get deeper on their knowledge and skills in advanced configuration and tuning. Finally it is destined for researchers and developers that use or wish to use Slurm as a research tool for experimentation, performance evaluation and comparisons in the areas of resource management and scheduling.</p>
-
-<h3>
-<a id="prerequisite-background-and-content-level" class="anchor" href="#prerequisite-background-and-content-level" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisite background and content level</h3>
-
-<p>Basic knowledge of cluster administrator tools, mysql databases, HPC principles and MPI will be needed for simple configuration and basic usage.
-Knowledge of scripting languages and understanding of C programming will be needed for the advanced configuration, usage and performance evaluation parts.</p>
-
-<h3>
-<a id="instructors-bio" class="anchor" href="#instructors-bio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instructors Bio:</h3>
-
-<p>The instructors are Slurm code contributors, have configured and tuned various production HPC clusters and are active in both the research and developments of Slurm. </p>
-
-<p>Yiannis Georgiou (PhD) is a systems software architect at BULL/ATOS R&amp;D on the HPC and Big Data group with expertise in resource management and scheduling. He is the lead architect of the developments done upon the open-source workload manager project Slurm within BULL and he participates in various research projects in the area. He is an active Slurm developer, a Slurm User Group conference committee member and he participates actively in defining Slurm's roadmap. He has published various articles in the field and has given numerous talks and tutorials upon resource management and scheduling. His research interests are centered around job scheduling, energy-efficiency, workload modeling, scalability, power management and high throughput computing. He holds a M.Sc Degree in Computer Science (2006) and a PhD degree (2010) upon resource management and scheduling in HPC, both diplomas obtained from Joseph Fourier University, Grenoble, France.</p>
-
-<p>David Glesser is a Phd student working on fast and multi-objective scheduling algorithms for High Performance Computing. His PhD is done in collaboration between the french leader in super-computers, Bull/Atos, and the DataMove team of the University Grenoble-Alpes, France. He has published papers on energy efficient scheduling and machine learning scheduling in prestigious international conference like CCGrid and SuperComputing.
-He first worked for Bull as an engineer on the open-source software Slurm before starting his Phd. His past and future developments focus on experimenting with Slurm, adapting Slurm to a wide range of different usages, improving energy management and developing new scheduling algorithm within Slurm. He has provided talks in many Slurm User Group meetings as well as SC Bird of Feathers.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/RJMS-Bull">RJMS-Bull</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
