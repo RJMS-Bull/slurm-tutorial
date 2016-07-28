@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title></title>
+	<meta name="generator" content="LibreOffice 4.2.8.2 (Linux)">
+	<meta name="author" content="yiannis ">
+	<meta name="created" content="20160114;85720875407250">
+	<meta name="changedby" content="yiannis ">
+	<meta name="changed" content="20160509;225556801015660">
+	<style type="text/css">
+	<!--
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+		a:link { so-language: zxx }
+	-->
+	</style>
+</head>
+<body lang="en-US" dir="ltr">
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><b>Tutorial
+Title:</b></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">Resource
+and Job Management in HPC clusters with Slurm: Administration, Usage
+and Performance Evaluation </font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><b>Instructors:
+</b></font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">Yiannis
+Georgiou  (Bull, Atos Group)</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">David
+Glesser        (Bull, Atos Group and University Grenoble-Alpes)<br></font><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><b>Abstract:</b></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">High
+Performance Computing is characterized by the continuous evolution of
+computing architectures, the proliferation of computing resources and
+the increasing complexity of applications, users wish to execute. One
+of the most important software of  the HPC software stack that deals
+with both hardware resources evolutions and applications' needs is
+the Resource and Job Management System (RJMS). This systems software
+which stands between the user workloads and the infrastructure,
+provides functions to configure and manage the pool of resources
+along with features for building, submitting, scheduling and
+monitoring user jobs in a dynamic computing environment.</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">This
+tutorial is upon Slurm Resource and Job Management System. Slurm is
+an open source RJMS, specifically designed for the scalability
+requirements of state-of-the-art HPC clusters. As of the November
+2015 Top500 supercomputer list, Slurm is being used on five of the
+ten most powerful computers in the world including the no1 system,
+Tianhe-2 with 3,120,000 computing cores. Throughout the years, it has
+evolved from a simple resource management software to a complex but
+very powerful resource and job manager, workload scheduler and an
+interesting research tool.</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">The
+tutorial will give an overview of the concepts and underlying
+architecture of Slurm and it will focus on both administrator
+configuration and user executions related aspects. It will be
+decomposed into three parts: Administration, Usage and Performance
+Evaluation.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">On
+the administration part there will be a detailed description and
+hands-on for features such as job prioritization, resources
+selection, GPGPUs and generic resources, advanced reservations,
+accounting (associations, QOS, etc), scheduling(backfill,
+preemption), high availability, power management, topology aware
+placement, licenses management, burst buffers, scalability tuning
+with a particular focus on the configuration of the newly developed
+power adaptive scheduling technique.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">The
+usage training part will provide in-depth analysis and hands-on for
+CPU usage parameters, options for multi-core and multi-threaded
+architectures, prolog and epilog scripts, job arrays, MPI tight
+integration, CPU frequency scaling usage, accounting / reporting and
+profiling of user jobs and a particular focus on the newly developed
+heterogeneous resources job specification language and multiple
+program multiple data (MPMD) MPI support.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">Finally
+the performance evaluation part will consist of techniques with
+hands-on to experiment with Slurm in large scales using simulation
+and emulation which will be valuable for researchers and developers.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">For
+the hands-on exercises particular VM and container environments will
+be made available along with a pre-installed testbed cluster to
+enable the experimentation of the different functionalities.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><b>Discussion of the
+topic’s relevance:</b></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">The
+topics of “Resource and Job Management” , “Energy-Efficient
+Management” along with “Fault tolerance and high-availability”
+which are all principal subjects of Cluster 2016 conference are
+directly related to the particular tutorial. The tutorial will be
+attractive to Cluster 2016 attendees working as cluster
+administrators, systems software developers or simple cluster users
+since Slurm is one of the most used RJMS within Top500 and it is
+probably the most known and deployed open-source RJMS for small and
+medium size clusters too. Finally, since Slurm is widely spread as a
+research tool on resource management and scheduling in HPC and the
+tutorial deals also with performance evaluation techniques regarding
+Slurm, it will be an interesting subject for researchers working on
+these areas. <br><br><b>Goals, demonstrations and exercises</b><b>:</b><br></font><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">The
+goals of the tutorial is to provide a detailed view of Slurm resource
+and job management system for administrators, users, developers and
+researchers.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">-The
+hands-on user level exercises will take place upon a pre-installed
+cluster where each participant will obtain a guest account and will
+be able to explore the different possibilities of SLURM through
+detailed step-by-step exercises.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">-The
+hands-on administrator level exercises will take place upon
+virtualized or containerized environments. Specifically constructed
+VM and Docker environments will become available to each interested
+participant and they will have the possibility to configure virtual
+clusters and experiment with the different available functionalities
+and configuration shortcuts.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">-The
+performance evaluation exercises will make use of open-source tools
+and techniques that have been developed by the instructors to
+experiment with Slurm in large scales. VM and Docker environments
+will be used to facilitate the usage of these tools.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><b><span style="font-variant: normal"><font color="#000000"><span style="font-style: normal">T</span></font></span><span style="font-variant: normal"><font color="#000000"><span style="font-style: normal">arget
+audience</span></font></span>:</b></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif">The
+tutorial is destined for scientists from different domains of
+computer science that use HPC clusters in their every day research.
+It is destined for site administrators that wish to adopt Slurm as
+their RJMS or that need to get deeper on their knowledge and skills
+in advanced configuration and tuning. Finally it is destined for
+researchers and developers that use or wish to use Slurm as a
+research tool for experimentation, performance evaluation and
+comparisons in the areas of resource management and scheduling.</font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><b>Prerequisite
+background and content level:</b></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Basic knowledge of
+cluster administrator tools, mysql databases, HPC principles and MPI
+will be needed for simple configuration and basic usage.</p>
+<p style="margin-bottom: 0in; line-height: 100%">Knowledge of
+scripting languages and understanding of C programming will be needed
+for the advanced configuration, usage and performance evaluation
+parts.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><b>Duration:</b></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">Ideally the tutorial
+should be given as a full-day tutorial. Nevertheless it can been
+adapted to fit in half day by selecting a list of the most
+interesting features depending the audience. Tutorials of both 
+full-day and half-day have been already presented by the instructors.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><b>Previous
+Tutorials:</b></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Slurm
+Administrator Tutorial given in LinkSCEEM-2 and Cy-Tera Workshop on
+20<sup>th</sup> of January 2015 at The Cyprus Institute, Nicosia,
+Cyprus (slides link no longer exists, attendance number 40 persons,
+full day tutorial)</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Slurm
+User and Administrator Tutorial given in SC-Camp 2015 summer school
+in Mexico on 2<sup>nd</sup> of July 2015 (attendance number 60
+persons, full day tutorial)</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><a href="http://sc-camp.org/SLURM_Tutorial_SCcamp2015.pdf">http://sc-camp.org/SLURM_Tutorial_SCcamp2015.pdf</a></font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Different
+tutorials and talks have been given during the Slurm User Group
+meetings by Yiannis, David and their group. (attendance number of
+Slurm User Group meetings has been between 40 to 80 people, half day
+tutorials)</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><a href="http://www.schedmd.com/slurmdocs/publications.html">http://www.schedmd.com/slurmdocs/publications.html</a></font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><b>A slide deck from
+a recent tutorial:</b></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+The most recent slide deck tutorial which is publicly available can
+be found here:</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><a href="http://sc-camp.org/SLURM_Tutorial_SCcamp2015.pdf">http://sc-camp.org/SLURM_Tutorial_SCcamp2015.pdf</a></font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">However
+a lot of new features have been developed in the meantime and are
+planned to be presented in the Cluster 2016 tutorial.</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><b>Instructors
+Bio:</b></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">The
+instructors are Slurm code contributors, have configured and tuned
+various production HPC clusters and are active in both the research
+and developments of Slurm. </font></font>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><b>Yiannis
+Georgiou </b><span style="font-weight: normal">(PhD) is a </span><span style="font-weight: normal">systems
+</span><span style="font-weight: normal">software architect at
+BULL/ATOS R</span><span style="font-weight: normal">&amp;D on the HPC
+and Big Data group</span><span style="font-weight: normal"> with
+expertise in resource management and scheduling. He is the lead
+architect of the </span><span style="font-weight: normal">developments
+done upon the</span><span style="font-weight: normal"> open-source
+workload manager project S</span><span style="font-weight: normal">lurm</span><span style="font-weight: normal">
+</span><span style="font-weight: normal">within BULL </span><span style="font-weight: normal">and
+he participates in various research projects in the </span><span style="font-weight: normal">area</span><span style="font-weight: normal">.
+</span><span style="font-weight: normal">He is an active S</span><span style="font-weight: normal">lurm</span><span style="font-weight: normal">
+developer, a S</span><span style="font-weight: normal">lurm</span><span style="font-weight: normal">
+User Group conference committee member and he participates actively
+in defining S</span><span style="font-weight: normal">lurm</span><span style="font-weight: normal">'s
+roadmap. He has published various articles in the field and has</span><span style="font-weight: normal">
+given numerous talks and tutorials upon </span><span style="font-weight: normal">resource
+management and scheduling. </span><span style="font-weight: normal">His
+research interests are </span><span style="font-weight: normal">centered</span><span style="font-weight: normal">
+around job scheduling, energy-efficiency, workload </span><span style="font-weight: normal">modeling</span><span style="font-weight: normal">,
+scalability, power management and high throughput computing. He holds
+a M.Sc Degree in Computer Science (2006) and a PhD degree (2010) upon
+resource management and scheduling in HPC, both diplomas obtained
+from Joseph Fourier University, </span><span style="font-weight: normal">Grenoble,
+</span><span style="font-weight: normal">France.</span></font></p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><b>David
+Glesser</b> is a Phd student working on fast and multi-objective
+scheduling algorithms for High Performance Computing. His PhD is done
+in collaboration between the french leader in super-computers,
+Bull/Atos, and the DataMove team of the University Grenoble-Alpes,
+France. He has published papers on energy efficient scheduling and
+machine learning scheduling in prestigious international conference
+like CCGrid and SuperComputing.</font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">He
+first worked for Bull as an engineer on the open-source software
+Slurm before starting his Phd. His past and future developments focus
+on experimenting with Slurm, adapting Slurm to a wide range of
+different usages, improving energy management and developing new
+scheduling algorithm within Slurm. He has provided talks in many
+Slurm User Group meetings as well as SC Bird of Feathers.</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt"><b>Instructors
+recent publications list:</b></font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">[1]
+Karim Djemame, Django Armstrong, Richard E. Kavanagh, Jean-Christophe
+Deprez, Ana Juan Ferrer, David Garcia Perez, Rosa M. Badia, Raúl
+Sirvent, Jorge Ejarque, Yiannis Georgiou:</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">TANGO:
+Transparent heterogeneous hardware Architecture deployment for eNergy
+Gain in Operation. CoRR abs/1603.01407 (2016)</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">[2]
+Yiannis Georgiou, David Glesser, Krzysztof Rzadca, Denis Trystram:</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">A
+Scheduler-Level Incentive Mechanism for Energy Efficiency in HPC.
+CCGRID 2015: 617-626</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">[3]
+Yiannis Georgiou, David Glesser, Denis Trystram:</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Adaptive
+Resource and Job Management for Limited Power Consumption. IPDPS
+Workshops 2015: 863-870</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">[4]
+Éric Gaussier, David Glesser, Valentin Reis, Denis Trystram:</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Improving
+backfilling by using machine learning to predict running times. SC
+2015: 64:1-64:10</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">2014</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">[5]
+Daniel Hackenberg, Thomas Ilsche, Joseph Schuchart, Robert Schöne,
+Wolfgang E. Nagel, Marc Simon, Yiannis Georgiou:</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">HDEEM:
+high definition energy efficiency monitoring. E2SC@SC 2014: 1-10</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">[6]
+Yiannis Georgiou, Thomas Cadeau, David Glesser, Danny Auble, Morris
+Jette, Matthieu Hautreux:</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Energy
+Accounting and Control with SLURM Resource and Job Management System.
+ICDCN 2014: 96-118</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">[7]
+Yiannis Georgiou, Matthieu Hautreux:</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Evaluating
+Scalability and Efficiency of the Resource and Job Management System
+on Large HPC Clusters. JSSPP 2012: 134-156</font></font></p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+<p style="margin-bottom: 0in; font-weight: normal; line-height: 100%">
+<br>
+</p>
+</body>
+</html>
