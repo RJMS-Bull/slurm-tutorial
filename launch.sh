@@ -1,5 +1,14 @@
 #!/bin/sh
 
+#build images
+docker build -t docker-slurm .
+cd docker_slurmctld_build/
+docker build -t docker-slurmctld .
+cd ../docker_slurmd_build/
+docker build -t docker-slurmd .
+cd ../
+
+#run cluster
 docker run --privileged --add-host ctld:172.17.0.2 --add-host c0:172.17.0.3 --add-host c1:172.17.0.4 -d -p 11134:22 -it -e "container=docker"  -v /sys/fs/cgroup:/sys/fs/cgroup  --name ctld --hostname ctld docker-slurmctld
 sleep 2
 docker run --privileged --add-host ctld:172.17.0.2 --add-host c0:172.17.0.3 --add-host c1:172.17.0.4 -d -p 11135:22 -it -e "container=docker"  -v /sys/fs/cgroup:/sys/fs/cgroup  --name c0 --hostname c0 docker-slurmd
