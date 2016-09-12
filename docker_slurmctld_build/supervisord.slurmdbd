@@ -3,4 +3,5 @@ command=slurmdbd -D -vvvvv
 #environment=LD_LIBRARY_PATH=/usr/local/lib/
 redirect_stderr=true
 #stdout_logfile=/var/log/supervisor/%(program_name)s.log
+#stdout_logfile=/var/log/slurmdbd.log
 stdout_logfile=syslog
