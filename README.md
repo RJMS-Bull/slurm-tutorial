@@ -155,7 +155,7 @@ Since ssh is activate within the node and it is possible to go around from the c
 ### 5. Hands-ON: Experiment with Slurm configuration and usage through exercises
 
 Now that the Slurm cluster is up and running you can start experimenting following the tutorial and the hands-on exercises available
-on the slides here.
+on the slides here: [SLURM_Tutorial_Cluster2016.pdf](https://github.com/RJMS-Bull/slurm-tutorial/blob/master/SLURM_Tutorial_Cluster2016.pdf)
 
 
 
